@@ -118,6 +118,14 @@ body {
   padding-bottom: 1.75rem;
 }
 
+/* Narrow screens: smaller side padding so a plan card fits without overflowing. */
+@media screen and (max-width: 768px) {
+  .content-area > .section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 /* Tool page title: smaller than Bulma's default so it stays on one line on narrow screens. */
 .tool-page-title {
   font-size: 1.25rem;
@@ -139,143 +147,6 @@ body {
 .sidebar .menu-list a.is-active {
   font-weight: bold;
 }
-
-/* Level-up plan cards */
-.plan-toolbar {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.plan-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Plain bordered card instead of Bulma's shadowed box. */
-.plan-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.375rem 2rem 0.375rem 0.75rem;
-  box-shadow: none;
-  border: 1px solid var(--bulma-border);
-}
-
-/* Bulma gives .box:not(:last-child) a 1.5rem bottom margin; the list gap handles spacing instead. */
-.plan-list > .plan-card {
-  margin-bottom: 0;
-}
-
-/*
- * Left side is a 3-column grid so the two rows line up:
- *   row 1: Pokémon select | EXP | Lv (with detail gear inside)
- *   row 2: mode select    | number input
- */
-.plan-card-main {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: grid;
-  /* Column 3 has a minimum width so the level input is comfortably wide. */
-  grid-template-columns: max-content max-content minmax(6.5em, max-content);
-  gap: 0.25rem 0.5rem;
-  align-items: end;
-}
-
-.plan-card-row {
-  display: contents;
-}
-
-/*
- * Row-2 number input spans columns 2-3 and fills them, so its right edge lines up
- * with the right edge of the level input above it.
- */
-.plan-card .plan-card-amount {
-  grid-column: 2 / 4;
-  justify-self: stretch;
-  width: 100%;
-}
-
-/* Level input using Bulma's has-icons-right; the icon slot holds the EXP detail gear. */
-.level-control {
-  width: 100%;
-}
-
-.level-control .level-input {
-  width: 100%;
-}
-
-/* Bulma sizes the icon for a 2.5em input and makes it non-interactive; our inputs are
-   shorter and the gear must be clickable. */
-.level-control .exp-detail-icon {
-  height: 100%;
-  pointer-events: auto;
-  color: inherit;
-}
-
-/* EXP detail (gear): a bare icon that is still a clickable button. */
-.exp-detail-button {
-  height: 100%;
-  padding: 0 0.3em;
-  border: none;
-  background: none;
-  font: inherit;
-  font-size: 1rem;
-  line-height: 1;
-  color: var(--bulma-text);
-  cursor: pointer;
-}
-
-.exp-detail-button:hover {
-  opacity: 0.7;
-}
-
-.exp-detail-button:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.exp-detail-button:focus-visible {
-  outline: 2px solid var(--bulma-link);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-.exp-detail-panel {
-  min-width: 14rem;
-}
-
-.exp-input {
-  width: 6em;
-}
-
-/* Mode select fills its column so it is as wide as the Pokémon select above it. */
-.mode-select,
-.mode-select select {
-  width: 100%;
-}
-
-/* Shorter controls than Bulma's is-small (2.5em = 30px) to keep cards compact. */
-.plan-card .input.is-small,
-.plan-card .button.is-small,
-.plan-card .select.is-small,
-.plan-card .select.is-small select {
-  height: 1.625rem;
-}
-
-.plan-card .select.is-small select {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.plan-card .select.is-small:not(.is-multiple):not(.is-loading)::after {
-  margin-top: -0.3em;
-}
-
 /* Compact (read-only) table for screenshots. */
 .plan-summary-table {
   margin-bottom: 0.5rem;
@@ -313,6 +184,14 @@ body {
   padding-bottom: 1.75rem;
 }
 
+/* Narrow screens: smaller side padding so a plan card fits without overflowing. */
+@media screen and (max-width: 768px) {
+  .content-area > .section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 /* Tool page title: smaller than Bulma's default so it stays on one line on narrow screens. */
 .tool-page-title {
   font-size: 1.25rem;
@@ -375,8 +254,7 @@ body {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  /* Column 3 has a minimum width so the level input is comfortably wide. */
-  grid-template-columns: max-content max-content minmax(6.5em, max-content);
+  grid-template-columns: max-content max-content max-content;
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -395,9 +273,16 @@ body {
   width: 100%;
 }
 
-/* Level input using Bulma's has-icons-right; the icon slot holds the EXP detail gear. */
+/* Level input using Bulma's has-icons-right; the icon slot holds the EXP detail gear.
+   Fixed width (not %) so the grid column and the icon position are well defined. */
 .level-control {
-  width: 100%;
+  width: 6.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .level-control {
+    width: 5.5rem;
+  }
 }
 
 .level-control .level-input {
@@ -482,10 +367,6 @@ body {
 .plan-card-field .plan-card-label {
   font-size: 0.625rem;
   margin-bottom: 1px;
-}
-
-.plan-card-field .level-input {
-  width: 3.5em;
 }
 
 .plan-card-label {
