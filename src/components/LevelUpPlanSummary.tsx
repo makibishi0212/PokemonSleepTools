@@ -26,8 +26,10 @@ function LevelUpPlanSummary({ plan, result }: Props) {
       <td className="has-text-centered" aria-label={nature.label}>
         {nature.icon}
       </td>
-      <td className="has-text-right">{plan.currentLevel || INVALID}</td>
-      <td className="has-text-right">{result ? result.level : INVALID}</td>
+      {/* Current level → level after leveling, e.g. "64 → 67" */}
+      <td className="has-text-right">
+        {plan.currentLevel || INVALID} → {result ? result.level : INVALID}
+      </td>
       <td className="has-text-right">
         {expToNext === null ? INVALID : expToNext > 0 ? format(expToNext) : '-'}
       </td>

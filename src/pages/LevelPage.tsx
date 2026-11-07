@@ -110,7 +110,6 @@ function LevelPage() {
               <th>ポケモン</th>
               <th className="has-text-centered">性格</th>
               <th className="has-text-right">Lv</th>
-              <th className="has-text-right">到達</th>
               <th className="has-text-right">次のレベルまで</th>
               <th className="has-text-right">アメ</th>
               <th className="has-text-right">かけら</th>
