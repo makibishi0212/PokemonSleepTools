@@ -173,14 +173,14 @@ body {
 
 /*
  * Left side is a 3-column grid so the two rows line up:
- *   row 1: Pokémon select | EXP | Lv | detail button
+ *   row 1: Pokémon select | EXP | Lv (with detail gear inside)
  *   row 2: mode select    | number input
  */
 .plan-card-main {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content;
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -191,18 +191,36 @@ body {
 
 /* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
 .plan-card-amount {
-  grid-column: 2 / 5;
+  grid-column: 2 / 4;
   justify-self: start;
+}
+
+/* Level input with the EXP detail gear docked inside its right edge. */
+.level-control {
+  position: relative;
+  display: inline-block;
+}
+
+.level-control .level-input {
+  width: 5em;
+  padding-right: 1.6em;
+}
+
+.level-control .exp-detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 
 /* EXP detail (gear): a bare icon that is still a clickable button. */
 .exp-detail-button {
-  height: 1.625rem;
-  padding: 0 0.25em;
+  height: 100%;
+  padding: 0 0.3em;
   border: none;
   background: none;
   font: inherit;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1;
   color: var(--bulma-text);
   cursor: pointer;
@@ -346,14 +364,14 @@ body {
 
 /*
  * Left side is a 3-column grid so the two rows line up:
- *   row 1: Pokémon select | EXP | Lv | detail button
+ *   row 1: Pokémon select | EXP | Lv (with detail gear inside)
  *   row 2: mode select    | number input
  */
 .plan-card-main {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content;
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -364,18 +382,36 @@ body {
 
 /* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
 .plan-card-amount {
-  grid-column: 2 / 5;
+  grid-column: 2 / 4;
   justify-self: start;
+}
+
+/* Level input with the EXP detail gear docked inside its right edge. */
+.level-control {
+  position: relative;
+  display: inline-block;
+}
+
+.level-control .level-input {
+  width: 5em;
+  padding-right: 1.6em;
+}
+
+.level-control .exp-detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 
 /* EXP detail (gear): a bare icon that is still a clickable button. */
 .exp-detail-button {
-  height: 1.625rem;
-  padding: 0 0.25em;
+  height: 100%;
+  padding: 0 0.3em;
   border: none;
   background: none;
   font: inherit;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1;
   color: var(--bulma-text);
   cursor: pointer;

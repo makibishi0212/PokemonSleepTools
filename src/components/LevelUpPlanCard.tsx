@@ -49,24 +49,27 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
             <NatureSelect value={plan.nature} onChange={(nature) => update({ nature })} />
           </div>
 
-          <label className="plan-card-field">
+          <div className="plan-card-field">
             <span className="plan-card-label">Lv</span>
-            <DraftInput
-              className={`${inputClass(validation.currentLevel !== null)} level-input`}
-              type="text"
-              inputMode="numeric"
-              value={plan.currentLevel}
-              aria-invalid={validation.currentLevel === null}
-              onCommit={(currentLevel) => update({ currentLevel })}
-            />
-          </label>
-
-          <ExpDetailButton
-            value={plan.expToNext}
-            maxExp={expToNextMax}
-            isInvalid={validation.expGot === null}
-            onChange={(expToNext) => update({ expToNext })}
-          />
+            {/* Level input with the EXP detail gear inside its right edge */}
+            <div className="level-control">
+              <DraftInput
+                className={`${inputClass(validation.currentLevel !== null)} level-input`}
+                type="text"
+                inputMode="numeric"
+                aria-label="現在のレベル"
+                value={plan.currentLevel}
+                aria-invalid={validation.currentLevel === null}
+                onCommit={(currentLevel) => update({ currentLevel })}
+              />
+              <ExpDetailButton
+                value={plan.expToNext}
+                maxExp={expToNextMax}
+                isInvalid={validation.expGot === null}
+                onChange={(expToNext) => update({ expToNext })}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Row 2: how much to level up */}
