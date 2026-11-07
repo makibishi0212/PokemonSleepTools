@@ -1,0 +1,10 @@
+/* Color constants. Reference them as var(--color-xxx) from any stylesheet. */
+:root {
+  /* Main screen */
+  --color-background: ghostwhite;
+  --color-text: #000000;
+
+  /* Top bar (and the menu open/close buttons on it) */
+  --color-bar-background: #181733;
+  --color-bar-text: #ffffff;
+}

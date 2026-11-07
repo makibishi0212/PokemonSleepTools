@@ -1,65 +1,10 @@
+/* Layout rules that Bulma does not provide. Colors come from colors.css and Bulma's CSS variables. */
+
+/* Make Bulma's base surface and text colors use our constants. */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  --bulma-scheme-main: var(--color-background);
+  --bulma-text: var(--color-text);
+  --bulma-text-strong: var(--color-text);
 }
 
 html,
@@ -71,48 +16,499 @@ body {
 body {
   margin: 0;
   box-sizing: border-box;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/*
+ * #root fills the remaining viewport and is the positioning context for the
+ * drawer, so the drawer and backdrop never cover the ad bar above <body>'s padding.
+ */
+#root {
+  position: relative;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+.content-area {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+/* Top bar (content area and sidebar share it). */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--color-bar-background);
+  color: var(--color-bar-text);
+}
+
+.top-bar-title {
+  color: var(--color-bar-text);
+}
+
+.top-bar-title:hover {
+  color: var(--color-bar-text);
+  opacity: 0.85;
+}
+
+/* Menu open/close buttons: bar color with a white icon. */
+.menu-button {
+  background-color: var(--color-bar-background);
+  color: var(--color-bar-text);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.menu-button:hover,
+.menu-button:focus-visible {
+  background-color: color-mix(in srgb, var(--color-bar-background), white 12%);
+  color: var(--color-bar-text);
+}
+
+.menu-button .icon {
+  font-size: 1.5rem;
+}
+
+/* Drawer sidebar. */
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  max-width: 100%;
+  z-index: 31;
+  overflow-y: auto;
+  background: var(--color-background);
+  border-right: 1px solid var(--bulma-border);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition:
+    transform 0.2s ease,
+    visibility 0.2s;
+}
+
+.sidebar.is-open {
+  transform: none;
+  visibility: visible;
+}
+
+/* Mobile (Bulma's breakpoint): the drawer takes the whole screen. */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    border-right: none;
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+/* Tool page: tighter vertical spacing than Bulma's section (3rem) and title (1.5rem) defaults. */
+.content-area > .section {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+/* Tool page title: smaller than Bulma's default so it stays on one line on narrow screens. */
+.tool-page-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .tool-page-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Sidebar links: plain text in the body color, no background (also for hover/active). */
+.sidebar .menu-list a,
+.sidebar .menu-list a:hover,
+.sidebar .menu-list a.is-active {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.sidebar .menu-list a:hover {
+  text-decoration: underline;
+}
+
+.sidebar .menu-list a.is-active {
+  font-weight: bold;
+}
+
+/* Level-up plan cards */
+.plan-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Plain bordered card instead of Bulma's shadowed box. */
+.plan-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 2rem 0.375rem 0.75rem;
+  box-shadow: none;
+  border: 1px solid var(--bulma-border);
+}
+
+/* Bulma gives .box:not(:last-child) a 1.5rem bottom margin; the list gap handles spacing instead. */
+.plan-list > .plan-card {
+  margin-bottom: 0;
+}
+
+/*
+ * Left side is a 3-column grid so the two rows line up:
+ *   row 1: Pokémon select | EXP | Lv
+ *   row 2: mode select    | number input
+ */
+.plan-card-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  gap: 0.25rem 0.5rem;
+  align-items: end;
+}
+
+.plan-card-row {
+  display: contents;
+}
+
+/* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
+.plan-card-amount {
+  grid-column: 2 / 4;
+  justify-self: start;
+}
+
+/* Mode select fills its column so it is as wide as the Pokémon select above it. */
+.mode-select,
+.mode-select select {
+  width: 100%;
+}
+
+/* Shorter controls than Bulma's is-small (2.5em = 30px) to keep cards compact. */
+.plan-card .input.is-small,
+.plan-card .button.is-small,
+.plan-card .select.is-small,
+.plan-card .select.is-small select {
+  height: 1.625rem;
+}
+
+.plan-card .select.is-small select {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.plan-card .select.is-small:not(.is-multiple):not(.is-loading)::after {
+  margin-top: -0.3em;
+}
+
+/* Compact (read-only) table for screenshots. */
+.plan-summary-table {
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.plan-summary-table th,
+.plan-summary-table td {
+  padding: 0.2em 0.4em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.plan-summary-table th {
+  font-size: 0.6875rem;
+  font-weight: normal;
+}
+
+/* Name column takes the remaining width and truncates long names. */
+.plan-summary-table .plan-summary-name {
+  width: 100%;
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plan-summary-table td:last-child {
+  font-weight: bold;
+}
+
+/* Tool page: tighter vertical spacing than Bulma's section (3rem) and title (1.5rem) defaults. */
+.content-area > .section {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+/* Tool page title: smaller than Bulma's default so it stays on one line on narrow screens. */
+.tool-page-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .tool-page-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Sidebar links: plain text in the body color, no background (also for hover/active). */
+.sidebar .menu-list a,
+.sidebar .menu-list a:hover,
+.sidebar .menu-list a.is-active {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.sidebar .menu-list a:hover {
+  text-decoration: underline;
+}
+
+.sidebar .menu-list a.is-active {
+  font-weight: bold;
+}
+
+/* Level-up plan cards */
+.plan-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Plain bordered card instead of Bulma's shadowed box. */
+.plan-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 2rem 0.375rem 0.75rem;
+  box-shadow: none;
+  border: 1px solid var(--bulma-border);
+}
+
+/* Bulma gives .box:not(:last-child) a 1.5rem bottom margin; the list gap handles spacing instead. */
+.plan-list > .plan-card {
+  margin-bottom: 0;
+}
+
+/*
+ * Left side is a 3-column grid so the two rows line up:
+ *   row 1: Pokémon select | EXP | Lv
+ *   row 2: mode select    | number input
+ */
+.plan-card-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  gap: 0.25rem 0.5rem;
+  align-items: end;
+}
+
+.plan-card-row {
+  display: contents;
+}
+
+/* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
+.plan-card-amount {
+  grid-column: 2 / 4;
+  justify-self: start;
+}
+
+/* Mode select fills its column so it is as wide as the Pokémon select above it. */
+.mode-select,
+.mode-select select {
+  width: 100%;
+}
+
+/* Shorter controls than Bulma's is-small (2.5em = 30px) to keep cards compact. */
+.plan-card .input.is-small,
+.plan-card .button.is-small,
+.plan-card .select.is-small,
+.plan-card .select.is-small select {
+  height: 1.625rem;
+}
+
+.plan-card .select.is-small select {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.plan-card .select.is-small:not(.is-multiple):not(.is-loading)::after {
+  margin-top: -0.3em;
+}
+
+/* Row-1 fields: a small caption (ポケモン / EXP / Lv) above each control to save horizontal space. */
+.plan-card-field {
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.plan-card-field .plan-card-label {
+  font-size: 0.625rem;
+  margin-bottom: 1px;
+}
+
+.plan-card-field .level-input {
+  width: 3.5em;
+}
+
+.plan-card-label {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.nature-button {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* Nature dropdown items are <button>s; make them look like Bulma's <a> items. */
+.nature-select .dropdown-menu {
+  min-width: 0;
+}
+
+.nature-option {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nature-option-icon {
+  display: inline-block;
+  width: 1.5em;
+}
+
+/* Right side: computed results (到達レベル / 消費アメ数, ゆめのかけら), caption over value. */
+.plan-card-results {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+/* Caption centered above the number; both rows share the same width. */
+.plan-card-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.plan-card-result .plan-card-label {
+  font-size: 0.5rem;
+}
+
+.plan-card-result-value {
+  font-size: 1rem;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.plan-card-result-value.is-shards {
+  font-size: 1.125rem;
+}
+
+.plan-card-delete {
+  position: absolute;
+  top: 0.375rem;
+  right: 0.375rem;
+}
+
+.level-input {
+  width: 4.5em;
+}
+
+.candy-input {
+  width: 6em;
+}
+
+/* Pokémon combobox: fixed width so the longest name does not widen it. */
+.pokemon-select .input {
+  width: 11em;
+}
+
+@media screen and (max-width: 768px) {
+  .pokemon-select .input {
+    width: 8.5em;
+  }
+}
+
+.pokemon-select .dropdown-menu {
+  min-width: 100%;
+}
+
+.pokemon-select-list {
+  max-height: 14rem;
+  overflow-y: auto;
+}
+
+.pokemon-option {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Tooltip shown above any element with data-tooltip on hover / keyboard focus. */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  z-index: 10;
+  padding: 0.25em 0.6em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
 }
