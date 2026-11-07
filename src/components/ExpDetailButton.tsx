@@ -1,4 +1,4 @@
-import { faGear } from '@fortawesome/free-solid-svg-icons'
+import { faBarsProgress } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useRef, useState } from 'react'
 import DraftInput from './DraftInput.tsx'
@@ -63,7 +63,7 @@ function ExpDetailButton({ value, onChange, maxExp, isInvalid }: Props) {
           disabled={disabled}
           onClick={() => setIsOpen((open) => !open)}
         >
-          <FontAwesomeIcon icon={faGear} aria-hidden="true" />
+          <FontAwesomeIcon icon={faBarsProgress} aria-hidden="true" />
         </button>
       </div>
       <div className="dropdown-menu" role="dialog" aria-label="経験値の詳細設定">
