@@ -45,7 +45,7 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
           />
 
           <div className="plan-card-field">
-            <span className="plan-card-label">EXP</span>
+            <span className="plan-card-label">性格</span>
             <NatureSelect value={plan.nature} onChange={(nature) => update({ nature })} />
           </div>
 
