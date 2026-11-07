@@ -512,3 +512,13 @@ body {
   white-space: nowrap;
   pointer-events: none;
 }
+
+/* Top page tool links: bordered card instead of Bulma's shadowed box. */
+.tool-link {
+  box-shadow: none;
+  border: 1px solid var(--bulma-border);
+}
+
+.tool-link:hover {
+  border-color: var(--bulma-link);
+}
