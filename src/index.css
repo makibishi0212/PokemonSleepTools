@@ -200,23 +200,21 @@ body {
   width: 100%;
 }
 
-/* Level input with the EXP detail gear docked inside its right edge. */
+/* Level input using Bulma's has-icons-right; the icon slot holds the EXP detail gear. */
 .level-control {
-  position: relative;
-  display: block;
   width: 100%;
 }
 
 .level-control .level-input {
   width: 100%;
-  padding-right: 1.6em;
 }
 
-.level-control .exp-detail {
-  position: absolute;
-  top: 0;
-  right: 0;
+/* Bulma sizes the icon for a 2.5em input and makes it non-interactive; our inputs are
+   shorter and the gear must be clickable. */
+.level-control .exp-detail-icon {
   height: 100%;
+  pointer-events: auto;
+  color: inherit;
 }
 
 /* EXP detail (gear): a bare icon that is still a clickable button. */
@@ -397,23 +395,21 @@ body {
   width: 100%;
 }
 
-/* Level input with the EXP detail gear docked inside its right edge. */
+/* Level input using Bulma's has-icons-right; the icon slot holds the EXP detail gear. */
 .level-control {
-  position: relative;
-  display: block;
   width: 100%;
 }
 
 .level-control .level-input {
   width: 100%;
-  padding-right: 1.6em;
 }
 
-.level-control .exp-detail {
-  position: absolute;
-  top: 0;
-  right: 0;
+/* Bulma sizes the icon for a 2.5em input and makes it non-interactive; our inputs are
+   shorter and the gear must be clickable. */
+.level-control .exp-detail-icon {
   height: 100%;
+  pointer-events: auto;
+  color: inherit;
 }
 
 /* EXP detail (gear): a bare icon that is still a clickable button. */

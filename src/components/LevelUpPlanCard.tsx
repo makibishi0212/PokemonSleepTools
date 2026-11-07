@@ -51,8 +51,8 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
 
           <div className="plan-card-field">
             <span className="plan-card-label">現在LV・EXP</span>
-            {/* Level input with the EXP detail gear inside its right edge */}
-            <div className="level-control">
+            {/* Bulma "input with icon" pattern; the right icon is the EXP detail gear */}
+            <div className="control has-icons-right level-control">
               <DraftInput
                 className={`${inputClass(validation.currentLevel !== null)} level-input`}
                 type="text"
@@ -63,12 +63,14 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
                 // A new level makes the mid-level EXP meaningless, so clear it.
                 onCommit={(currentLevel) => update({ currentLevel, expToNext: '' })}
               />
-              <ExpDetailButton
-                value={plan.expToNext}
-                maxExp={expToNextMax}
-                isInvalid={validation.expGot === null}
-                onChange={(expToNext) => update({ expToNext })}
-              />
+              <span className="icon is-small is-right exp-detail-icon">
+                <ExpDetailButton
+                  value={plan.expToNext}
+                  maxExp={expToNextMax}
+                  isInvalid={validation.expGot === null}
+                  onChange={(expToNext) => update({ expToNext })}
+                />
+              </span>
             </div>
           </div>
         </div>
