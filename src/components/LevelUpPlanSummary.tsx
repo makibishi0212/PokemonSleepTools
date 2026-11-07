@@ -1,6 +1,6 @@
 import { findPokemon } from '../data/pokemons.ts'
 import { natureInfo } from '../util/levelUp.ts'
-import type { Plan, PlanResult } from '../util/plan.ts'
+import { type Plan, type PlanResult, validatePlan } from '../util/plan.ts'
 
 type Props = {
   plan: Plan
@@ -18,6 +18,8 @@ function format(n: number): string {
 function LevelUpPlanSummary({ plan, result }: Props) {
   const pokemon = findPokemon(plan.pokemonName)
   const nature = natureInfo(plan.nature)
+  // EXP still needed for the next level; the whole requirement when not set.
+  const expToNext = pokemon ? validatePlan(plan, pokemon.exp).expToNext : null
   return (
     <tr className={result ? '' : 'has-text-danger'}>
       <td className="plan-summary-name">{pokemon?.nameJa ?? plan.pokemonName}</td>
@@ -26,7 +28,9 @@ function LevelUpPlanSummary({ plan, result }: Props) {
       </td>
       <td className="has-text-right">{plan.currentLevel || INVALID}</td>
       <td className="has-text-right">{result ? result.level : INVALID}</td>
-      <td className="has-text-right">{plan.expToNext.trim() || '-'}</td>
+      <td className="has-text-right">
+        {expToNext === null ? INVALID : expToNext > 0 ? format(expToNext) : '-'}
+      </td>
       <td className="has-text-right">{result ? format(result.candy) : INVALID}</td>
       <td className="has-text-right">{result ? format(result.shards) : INVALID}</td>
     </tr>

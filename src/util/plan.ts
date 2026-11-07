@@ -42,6 +42,11 @@ export type PlanValidation = {
   candy: number | null
   /** EXP already earned within the current level (0 when not set); null when invalid */
   expGot: number | null
+  /**
+   * EXP still needed for the next level. When not set, the amount right after
+   * a level-up (the whole requirement); 0 at max level; null when invalid.
+   */
+  expToNext: number | null
   /** true when every field used by the current mode is valid */
   isValid: boolean
 }
@@ -69,13 +74,15 @@ export function validatePlan(plan: Plan, expType: ExpType): PlanValidation {
   let isValid = currentLevel !== null
 
   // Optional detail: EXP still needed for the next level, within 1..required.
+  // Not set = just leveled up, so the whole requirement is still needed.
+  const required = currentLevel === null ? 0 : expToNextLevel(currentLevel, expType)
   let expGot: number | null = 0
   if (plan.expToNext.trim() !== '') {
-    const required = currentLevel === null ? 0 : expToNextLevel(currentLevel, expType)
     const n = parseInteger(plan.expToNext)
     expGot = required > 0 && n !== null && n >= 1 && n <= required ? required - n : null
     isValid &&= expGot !== null
   }
+  const expToNext = currentLevel === null || expGot === null ? null : required - expGot
 
   if (plan.mode === 'target') {
     targetLevel = parseLevel(plan.targetLevel)
@@ -89,5 +96,5 @@ export function validatePlan(plan: Plan, expType: ExpType): PlanValidation {
     isValid &&= candy !== null
   }
 
-  return { currentLevel, targetLevel, candy, expGot, isValid }
+  return { currentLevel, targetLevel, candy, expGot, expToNext, isValid }
 }
