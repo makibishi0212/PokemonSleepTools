@@ -6,6 +6,7 @@ import './colors.css'
 import './index.css'
 import App from './App.tsx'
 import { emulateAdBanner } from './adBanner.ts'
+import { preventInputZoomOnIos } from './preventInputZoom.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,3 +18,4 @@ createRoot(document.getElementById('root')!).render(
 )
 
 emulateAdBanner()
+preventInputZoomOnIos()
