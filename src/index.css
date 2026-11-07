@@ -299,6 +299,9 @@ body {
 
 /* EXP detail (gear): a bare icon that is still a clickable button. */
 .exp-detail-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   padding: 0 0.3em;
   border: none;
@@ -308,6 +311,11 @@ body {
   line-height: 1;
   color: var(--bulma-text);
   cursor: pointer;
+}
+
+/* Font Awesome lowers inline SVGs to sit on the text baseline; center it in the button instead. */
+.exp-detail-button svg {
+  vertical-align: 0;
 }
 
 .exp-detail-button:hover {
