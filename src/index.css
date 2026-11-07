@@ -273,8 +273,7 @@ body {
   width: 100%;
 }
 
-/* Level input using Bulma's has-icons-right; the icon slot holds the EXP detail gear.
-   Fixed width (not %) so the grid column and the icon position are well defined. */
+/* Level field: a button styled as an input, with Bulma's right icon slot. */
 .level-control {
   width: 6.5rem;
 }
@@ -285,60 +284,29 @@ body {
   }
 }
 
-.level-control .level-input {
+.level-display {
   width: 100%;
-}
-
-/* Bulma sizes the icon for a 2.5em input and makes it non-interactive; our inputs are
-   shorter and the gear must be clickable. */
-.level-control .exp-detail-icon {
-  height: 100%;
-  pointer-events: auto;
-  color: inherit;
-}
-
-/* EXP detail (gear): a bare icon that is still a clickable button. */
-.exp-detail-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 0 0.3em;
-  border: none;
-  background: none;
-  font: inherit;
-  font-size: 1rem;
-  line-height: 1;
-  color: var(--bulma-text);
+  justify-content: flex-start;
   cursor: pointer;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Font Awesome lowers inline SVGs to sit on the text baseline; center it in the button instead. */
-.exp-detail-button svg {
-  vertical-align: 0;
+/* Bulma sizes the icon for a 2.5em input; our inputs are shorter. */
+.level-control .icon {
+  height: 100%;
 }
 
-.exp-detail-button:hover {
-  opacity: 0.7;
+/* Level / EXP panel shown under the level field */
+.level-dropdown {
+  display: block;
 }
 
-.exp-detail-button:disabled {
-  opacity: 0.3;
-  cursor: default;
+.level-exp-panel {
+  min-width: 15rem;
 }
 
-.exp-detail-button:focus-visible {
-  outline: 2px solid var(--bulma-link);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-.exp-detail-panel {
-  min-width: 14rem;
-}
-
-.exp-input {
-  width: 6em;
+.level-exp-panel .input {
+  width: 7em;
 }
 
 /* Mode select fills its column so it is as wide as the Pokémon select above it. */

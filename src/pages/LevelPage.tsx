@@ -14,7 +14,7 @@ function newPlan(): Plan {
     id: nextId++,
     pokemonName: pokemons[0].name,
     nature: 'neutral',
-    currentLevel: '1',
+    currentLevel: '15',
     mode: 'candy',
     candy: '0',
     targetLevel: '30',

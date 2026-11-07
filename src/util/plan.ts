@@ -79,8 +79,8 @@ export function validatePlan(plan: Plan, expType: ExpType): PlanValidation {
 
   if (plan.mode === 'target') {
     targetLevel = parseLevel(plan.targetLevel)
-    // The target must be above the current level.
-    if (targetLevel !== null && currentLevel !== null && targetLevel <= currentLevel) {
+    // The target must not be below the current level (equal = nothing to do).
+    if (targetLevel !== null && currentLevel !== null && targetLevel < currentLevel) {
       targetLevel = null
     }
     isValid &&= targetLevel !== null

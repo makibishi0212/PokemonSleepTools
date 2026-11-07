@@ -1,8 +1,10 @@
+import { faBarsProgress } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 import { findPokemon } from '../data/pokemons.ts'
-import { expToNextLevel } from '../util/levelUp.ts'
-import { type Plan, type PlanMode, type PlanResult, validatePlan } from '../util/plan.ts'
+import { type Plan, type PlanMode, type PlanResult, parseLevel, validatePlan } from '../util/plan.ts'
 import DraftInput from './DraftInput.tsx'
-import ExpDetailButton from './ExpDetailButton.tsx'
+import LevelExpPanel from './LevelExpPanel.tsx'
 import NatureSelect from './NatureSelect.tsx'
 import PokemonSelect from './PokemonSelect.tsx'
 
@@ -22,6 +24,13 @@ const modes: readonly { value: PlanMode; label: string }[] = [
 /** Placeholder shown instead of a result while input is invalid. */
 const INVALID = '---'
 
+/** A target below the current level makes no sense; raise it to the current level. */
+function clampTarget(targetLevel: string, currentLevel: string): string {
+  const target = parseLevel(targetLevel)
+  const current = parseLevel(currentLevel)
+  return target !== null && current !== null && target < current ? String(current) : targetLevel
+}
+
 function format(n: number): string {
   return n.toLocaleString('ja-JP')
 }
@@ -30,8 +39,9 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
   const update = (patch: Partial<Plan>) => onChange({ ...plan, ...patch })
   const expType = findPokemon(plan.pokemonName)?.exp ?? 600
   const validation = validatePlan(plan, expType)
-  const expToNextMax =
-    validation.currentLevel === null ? 0 : expToNextLevel(validation.currentLevel, expType)
+  const [isLevelPanelOpen, setIsLevelPanelOpen] = useState(false)
+  const hasExpDetail = plan.expToNext.trim() !== ''
+  const levelInvalid = validation.currentLevel === null || validation.expGot === null
   const inputClass = (valid: boolean) => `input is-small ${valid ? '' : 'is-danger'}`
 
   return (
@@ -51,26 +61,48 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
 
           <div className="plan-card-field">
             <span className="plan-card-label">現在LV・EXP</span>
-            {/* Bulma "input with icon" pattern; the right icon is the EXP detail gear */}
-            <div className="control has-icons-right level-control">
-              <DraftInput
-                className={`${inputClass(validation.currentLevel !== null)} level-input`}
-                type="text"
-                inputMode="numeric"
-                aria-label="現在のレベル"
-                value={plan.currentLevel}
-                aria-invalid={validation.currentLevel === null}
-                // A new level makes the mid-level EXP meaningless, so clear it.
-                onCommit={(currentLevel) => update({ currentLevel, expToNext: '' })}
-              />
-              <span className="icon is-small is-right exp-detail-icon">
-                <ExpDetailButton
-                  value={plan.expToNext}
-                  maxExp={expToNextMax}
-                  isInvalid={validation.expGot === null}
-                  onChange={(expToNext) => update({ expToNext })}
+            {/* Looks like an input with a right icon; clicking opens the level/EXP panel below */}
+            <div className={`dropdown is-right level-dropdown ${isLevelPanelOpen ? 'is-active' : ''}`}>
+              <div className="dropdown-trigger control has-icons-right level-control">
+                <button
+                  type="button"
+                  className={`input is-small level-display ${levelInvalid ? 'is-danger' : ''}`}
+                  aria-label="現在のレベルと次のレベルまでのEXPを設定"
+                  aria-haspopup="dialog"
+                  aria-expanded={isLevelPanelOpen}
+                  data-tooltip={
+                    hasExpDetail && !isLevelPanelOpen
+                      ? `次のレベルまで あと ${plan.expToNext} EXP`
+                      : undefined
+                  }
+                  onClick={() => setIsLevelPanelOpen((open) => !open)}
+                >
+                  {plan.currentLevel || '-'}
+                </button>
+                <span
+                  className={`icon is-small is-right ${
+                    validation.expGot === null ? 'has-text-danger' : hasExpDetail ? 'has-text-info' : ''
+                  }`}
+                >
+                  <FontAwesomeIcon icon={faBarsProgress} aria-hidden="true" />
+                </span>
+              </div>
+              {isLevelPanelOpen && (
+                <LevelExpPanel
+                  expType={expType}
+                  level={plan.currentLevel}
+                  expToNext={plan.expToNext}
+                  onSave={(currentLevel, expToNext) => {
+                    update({
+                      currentLevel,
+                      expToNext,
+                      targetLevel: clampTarget(plan.targetLevel, currentLevel),
+                    })
+                    setIsLevelPanelOpen(false)
+                  }}
+                  onClose={() => setIsLevelPanelOpen(false)}
                 />
-              </span>
+              )}
             </div>
           </div>
         </div>
@@ -81,7 +113,12 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
             <select
               value={plan.mode}
               aria-label="指定方法"
-              onChange={(e) => update({ mode: e.target.value as PlanMode })}
+              onChange={(e) =>
+                update({
+                  mode: e.target.value as PlanMode,
+                  targetLevel: clampTarget(plan.targetLevel, plan.currentLevel),
+                })
+              }
             >
               {modes.map((m) => (
                 <option key={m.value} value={m.value}>
@@ -100,7 +137,9 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
                 aria-label="目標レベル"
                 aria-invalid={validation.targetLevel === null}
                 value={plan.targetLevel}
-                onCommit={(targetLevel) => update({ targetLevel })}
+                onCommit={(targetLevel) =>
+                  update({ targetLevel: clampTarget(targetLevel, plan.currentLevel) })
+                }
               />
             </>
           ) : (
