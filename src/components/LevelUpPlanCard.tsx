@@ -170,13 +170,13 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete, onMoveUp, onMoveDow
           </div>
         ) : (
           <div className="plan-card-result">
-            <span className="plan-card-label">到達レベル</span>
+            <span className="plan-card-label">到達LV</span>
             <span className="plan-card-result-value">{result ? result.level : INVALID}</span>
           </div>
         )}
         <div className="plan-card-result">
           <span className="plan-card-label">かけら</span>
-          <span className="plan-card-result-value is-shards">
+          <span className="plan-card-result-value">
             {result ? format(result.shards) : INVALID}
           </span>
         </div>

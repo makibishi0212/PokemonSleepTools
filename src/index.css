@@ -239,6 +239,22 @@ body {
   }
 }
 
+/* Very narrow screens (320px): one more step down so the toolbar still fits on one line. */
+@media screen and (max-width: 360px) {
+  .boost-buttons .button.is-small {
+    font-size: 0.625rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .plan-view-toggle.button.is-small {
+    font-size: 0.6875rem;
+    height: 1.75rem;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+}
+
 /* Plain bordered card instead of Bulma's shadowed box. */
 .plan-card {
   position: relative;
@@ -288,12 +304,12 @@ body {
 
 /* Level field: a button styled as an input, with Bulma's right icon slot. */
 .level-control {
-  width: 6.5rem;
+  width: 5.75rem;
 }
 
 @media screen and (max-width: 768px) {
   .level-control {
-    width: 5.5rem;
+    width: 4.75rem;
   }
 }
 
@@ -388,13 +404,43 @@ body {
   width: 1.5em;
 }
 
-/* Right side: computed results (到達レベル / 消費アメ数, ゆめのかけら), caption over value. */
+/* Right side: computed results (到達LV / 消費アメ数, ゆめのかけら), caption over value. */
 .plan-card-results {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 0.25rem;
+}
+
+/*
+ * Narrow screens: the inputs alone need ~240px, so a 6-7 digit shard count no
+ * longer fits beside them. Wrap the results onto their own row under the inputs,
+ * laid out side by side and left-aligned. (Above 360px a 7-digit count may still
+ * be clipped on 390px-class phones; accepted to keep the one-line layout there.)
+ */
+@media screen and (max-width: 360px) {
+  .plan-card {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+
+  .plan-card-main {
+    flex: 0 0 100%;
+  }
+
+  .plan-card-results {
+    flex: 0 0 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  /* Left-aligned like the inputs above (captions and values included). */
+  .plan-card-result {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
 /* Caption above the number, both right-aligned; the two rows share the same width. */
@@ -414,10 +460,6 @@ body {
   font-size: 1rem;
   font-weight: bold;
   font-variant-numeric: tabular-nums;
-}
-
-.plan-card-result-value.is-shards {
-  font-size: 1.125rem;
 }
 
 /* Top-right column of the card: delete button, then move-up / move-down. */

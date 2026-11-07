@@ -95,7 +95,7 @@ function LevelPage() {
         </div>
         <button
           type="button"
-          className="button is-small"
+          className="button is-small plan-view-toggle"
           aria-pressed={isCompact}
           onClick={() => setIsCompact((v) => !v)}
         >
