@@ -98,9 +98,10 @@ function LevelPage() {
           <thead>
             <tr>
               <th>ポケモン</th>
-              <th className="has-text-centered">EXP</th>
+              <th className="has-text-centered">性格</th>
               <th className="has-text-right">Lv</th>
               <th className="has-text-right">到達</th>
+              <th className="has-text-right">次のレベルまで</th>
               <th className="has-text-right">アメ</th>
               <th className="has-text-right">かけら</th>
             </tr>

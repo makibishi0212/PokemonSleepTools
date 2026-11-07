@@ -26,6 +26,7 @@ function LevelUpPlanSummary({ plan, result }: Props) {
       </td>
       <td className="has-text-right">{plan.currentLevel || INVALID}</td>
       <td className="has-text-right">{result ? result.level : INVALID}</td>
+      <td className="has-text-right">{plan.expToNext.trim() || '-'}</td>
       <td className="has-text-right">{result ? format(result.candy) : INVALID}</td>
       <td className="has-text-right">{result ? format(result.shards) : INVALID}</td>
     </tr>
