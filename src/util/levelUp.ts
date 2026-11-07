@@ -89,15 +89,28 @@ export type TargetLevelResult = {
   shards: number
 }
 
-/** Candy and dream shards needed to reach `targetLevel`. */
-export function calcByTargetLevel(input: PlanInput, targetLevel: number): TargetLevelResult {
+/** EXP still needed to go from `level` to the next one (0 at max level). */
+export function expToNextLevel(level: number, expType: ExpType): number {
+  if (level < minLevel || level >= maxLevel) return 0
+  return expBetween(level, level + 1, expType)
+}
+
+/**
+ * Candy and dream shards needed to reach `targetLevel`.
+ * @param expGot EXP already earned within the current level.
+ */
+export function calcByTargetLevel(
+  input: PlanInput,
+  targetLevel: number,
+  expGot: number = 0,
+): TargetLevelResult {
   const { expType, nature, boost, currentLevel } = input
   if (currentLevel >= targetLevel) {
     return { candy: 0, shards: 0 }
   }
   let candy = 0
   let shards = 0
-  let carry = 0 // surplus EXP carried into the next level
+  let carry = expGot // surplus EXP carried into the next level
   for (let level = currentLevel; level < targetLevel; level++) {
     const required = expBetween(level, level + 1, expType) - carry
     const perCandy = expPerCandy(level, nature, boost)
@@ -118,12 +131,15 @@ export type CandyResult = {
   shards: number
 }
 
-/** Level reached and dream shards needed when using `candy` candies. */
-export function calcByCandy(input: PlanInput, candy: number): CandyResult {
+/**
+ * Level reached and dream shards needed when using `candy` candies.
+ * @param expGot EXP already earned within the current level.
+ */
+export function calcByCandy(input: PlanInput, candy: number, expGot: number = 0): CandyResult {
   const { expType, nature, boost, currentLevel } = input
   let candyLeft = Math.max(0, Math.floor(candy))
   let shards = 0
-  let carry = 0
+  let carry = expGot
   let level = currentLevel
   while (level < maxLevel && candyLeft > 0) {
     const required = expBetween(level, level + 1, expType) - carry

@@ -18,14 +18,18 @@ function newPlan(): Plan {
     mode: 'candy',
     candy: '0',
     targetLevel: '30',
+    expToNext: '',
   }
 }
 
 /** Compute the result of one plan; null when its input is invalid. */
 function calcPlan(plan: Plan, boost: Boost): PlanResult | null {
   const pokemon = findPokemon(plan.pokemonName)
-  const v = validatePlan(plan)
-  if (!pokemon || !v.isValid || v.currentLevel === null) {
+  if (!pokemon) {
+    return null
+  }
+  const v = validatePlan(plan, pokemon.exp)
+  if (!v.isValid || v.currentLevel === null || v.expGot === null) {
     return null
   }
   const input = {
@@ -35,11 +39,11 @@ function calcPlan(plan: Plan, boost: Boost): PlanResult | null {
     currentLevel: v.currentLevel,
   }
   if (plan.mode === 'candy') {
-    const r = calcByCandy(input, v.candy ?? 0)
+    const r = calcByCandy(input, v.candy ?? 0, v.expGot)
     return { level: r.level, candy: r.candyUsed, shards: r.shards }
   }
   const targetLevel = v.targetLevel ?? v.currentLevel
-  const r = calcByTargetLevel(input, targetLevel)
+  const r = calcByTargetLevel(input, targetLevel, v.expGot)
   return { level: targetLevel, candy: r.candy, shards: r.shards }
 }
 

@@ -173,14 +173,14 @@ body {
 
 /*
  * Left side is a 3-column grid so the two rows line up:
- *   row 1: Pokémon select | EXP | Lv
+ *   row 1: Pokémon select | EXP | Lv | detail button
  *   row 2: mode select    | number input
  */
 .plan-card-main {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -191,8 +191,22 @@ body {
 
 /* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
 .plan-card-amount {
-  grid-column: 2 / 4;
+  grid-column: 2 / 5;
   justify-self: start;
+}
+
+/* EXP detail (gear) button and its panel. */
+.exp-detail-button {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+.exp-detail-panel {
+  min-width: 14rem;
+}
+
+.exp-input {
+  width: 6em;
 }
 
 /* Mode select fills its column so it is as wide as the Pokémon select above it. */
@@ -310,14 +324,14 @@ body {
 
 /*
  * Left side is a 3-column grid so the two rows line up:
- *   row 1: Pokémon select | EXP | Lv
+ *   row 1: Pokémon select | EXP | Lv | detail button
  *   row 2: mode select    | number input
  */
 .plan-card-main {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -328,8 +342,22 @@ body {
 
 /* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
 .plan-card-amount {
-  grid-column: 2 / 4;
+  grid-column: 2 / 5;
   justify-self: start;
+}
+
+/* EXP detail (gear) button and its panel. */
+.exp-detail-button {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+
+.exp-detail-panel {
+  min-width: 14rem;
+}
+
+.exp-input {
+  width: 6em;
 }
 
 /* Mode select fills its column so it is as wide as the Pokémon select above it. */

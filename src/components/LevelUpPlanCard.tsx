@@ -1,5 +1,8 @@
+import { findPokemon } from '../data/pokemons.ts'
+import { expToNextLevel } from '../util/levelUp.ts'
 import { type Plan, type PlanMode, type PlanResult, validatePlan } from '../util/plan.ts'
 import DraftInput from './DraftInput.tsx'
+import ExpDetailButton from './ExpDetailButton.tsx'
 import NatureSelect from './NatureSelect.tsx'
 import PokemonSelect from './PokemonSelect.tsx'
 
@@ -25,7 +28,10 @@ function format(n: number): string {
 
 function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
   const update = (patch: Partial<Plan>) => onChange({ ...plan, ...patch })
-  const validation = validatePlan(plan)
+  const expType = findPokemon(plan.pokemonName)?.exp ?? 600
+  const validation = validatePlan(plan, expType)
+  const expToNextMax =
+    validation.currentLevel === null ? 0 : expToNextLevel(validation.currentLevel, expType)
   const inputClass = (valid: boolean) => `input is-small ${valid ? '' : 'is-danger'}`
 
   return (
@@ -54,6 +60,13 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
               onCommit={(currentLevel) => update({ currentLevel })}
             />
           </label>
+
+          <ExpDetailButton
+            value={plan.expToNext}
+            maxExp={expToNextMax}
+            isInvalid={validation.expGot === null}
+            onChange={(expToNext) => update({ expToNext })}
+          />
         </div>
 
         {/* Row 2: how much to level up */}
