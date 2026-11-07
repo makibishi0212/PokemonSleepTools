@@ -40,11 +40,11 @@ function calcPlan(plan: Plan, boost: Boost): PlanResult | null {
   }
   if (plan.mode === 'candy') {
     const r = calcByCandy(input, v.candy ?? 0, v.expGot)
-    return { level: r.level, candy: r.candyUsed, shards: r.shards }
+    return { level: r.level, candy: r.candyUsed, shards: r.shards, expToNext: r.expToNext }
   }
   const targetLevel = v.targetLevel ?? v.currentLevel
   const r = calcByTargetLevel(input, targetLevel, v.expGot)
-  return { level: targetLevel, candy: r.candy, shards: r.shards }
+  return { level: targetLevel, candy: r.candy, shards: r.shards, expToNext: r.expToNext }
 }
 
 /** レベル上げゆめのかけら計算 */

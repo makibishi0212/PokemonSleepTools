@@ -11,23 +11,34 @@ describe('calcByTargetLevel (reference values from pokesleep-tool tests, Ralts =
     { from: 12, to: 50, nature: 'expDown', candy: 1165, shards: 196946 },
     { from: 12, to: 50, nature: 'neutral', candy: 975, shards: 165252 },
   ] as const)('Lv$from -> Lv$to ($nature)', ({ from, to, nature, candy, shards }) => {
-    expect(calcByTargetLevel({ ...ralts, nature, currentLevel: from }, to)).toEqual({ candy, shards })
+    expect(calcByTargetLevel({ ...ralts, nature, currentLevel: from }, to)).toMatchObject({ candy, shards })
   })
 
   test('Lv12 -> Lv50 with 75 EXP already earned', () => {
     const r = calcByTargetLevel({ ...ralts, nature: 'neutral', currentLevel: 12 }, 50, 75)
-    expect(r).toEqual({ candy: 973, shards: 165091 })
+    expect(r).toMatchObject({ candy: 973, shards: 165091 })
   })
 
   test('Lv1 -> Lv30 matches the wiki cumulative table', () => {
-    expect(calcByTargetLevel({ ...ralts, nature: 'neutral', currentLevel: 1 }, 30)).toEqual({
+    expect(calcByTargetLevel({ ...ralts, nature: 'neutral', currentLevel: 1 }, 30)).toMatchObject({
       candy: 312,
       shards: 24072,
     })
   })
 
-  test('target at or below the current level needs nothing', () => {
-    expect(calcByTargetLevel({ ...ralts, nature: 'neutral', currentLevel: 30 }, 30)).toEqual({ candy: 0, shards: 0 })
+  test('target at or below the current level needs nothing and keeps the current remaining EXP', () => {
+    const input = { ...ralts, nature: 'neutral' as const, currentLevel: 30 }
+    expect(calcByTargetLevel(input, 30)).toEqual({ candy: 0, shards: 0, expToNext: expToNextLevel(30, 600) })
+    expect(calcByTargetLevel(input, 30, 100)).toEqual({ candy: 0, shards: 0, expToNext: expToNextLevel(30, 600) - 100 })
+    expect(calcByTargetLevel({ ...input, currentLevel: 70 }, 70).expToNext).toBe(0)
+  })
+
+  test('remaining EXP at the target: surplus from the last candy is carried over', () => {
+    // Lv12 -> Lv50 and then reaching max level
+    const r = calcByTargetLevel({ ...ralts, nature: 'neutral', currentLevel: 12 }, 50)
+    expect(r.expToNext).toBeGreaterThan(0)
+    expect(r.expToNext).toBeLessThanOrEqual(expToNextLevel(50, 600))
+    expect(calcByTargetLevel({ ...ralts, nature: 'neutral', currentLevel: 12 }, 70).expToNext).toBe(0)
   })
 })
 
@@ -93,6 +104,7 @@ describe('calcByCandy (in-game observations, no boost)', () => {
     expect(c.level).toBe(50)
     expect(c.shards).toBe(t.shards)
     expect(c.candyUsed).toBe(t.candy)
+    expect(c.expToNext).toBe(t.expToNext)
   })
 
   test('stops at max level and reports the leftover candy', () => {

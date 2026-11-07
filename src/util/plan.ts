@@ -31,6 +31,8 @@ export type PlanResult = {
   candy: number
   /** Dream shards required */
   shards: number
+  /** EXP still needed for the next level once `level` is reached (0 at max level) */
+  expToNext: number
 }
 
 /** Parsed input values; `null` means the field is invalid. */
@@ -42,11 +44,6 @@ export type PlanValidation = {
   candy: number | null
   /** EXP already earned within the current level (0 when not set); null when invalid */
   expGot: number | null
-  /**
-   * EXP still needed for the next level. When not set, the amount right after
-   * a level-up (the whole requirement); 0 at max level; null when invalid.
-   */
-  expToNext: number | null
   /** true when every field used by the current mode is valid */
   isValid: boolean
 }
@@ -82,8 +79,6 @@ export function validatePlan(plan: Plan, expType: ExpType): PlanValidation {
     expGot = required > 0 && n !== null && n >= 1 && n <= required ? required - n : null
     isValid &&= expGot !== null
   }
-  const expToNext = currentLevel === null || expGot === null ? null : required - expGot
-
   if (plan.mode === 'target') {
     targetLevel = parseLevel(plan.targetLevel)
     // The target must not be below the current level (equal = nothing to do).
@@ -96,5 +91,5 @@ export function validatePlan(plan: Plan, expType: ExpType): PlanValidation {
     isValid &&= candy !== null
   }
 
-  return { currentLevel, targetLevel, candy, expGot, expToNext, isValid }
+  return { currentLevel, targetLevel, candy, expGot, isValid }
 }

@@ -91,6 +91,8 @@ export type TargetLevelResult = {
   candy: number
   /** Dream shards required */
   shards: number
+  /** EXP still needed for the next level once the target is reached (0 at max level) */
+  expToNext: number
 }
 
 /** EXP still needed to go from `level` to the next one (0 at max level). */
@@ -110,7 +112,9 @@ export function calcByTargetLevel(
 ): TargetLevelResult {
   const { expType, nature, boost, currentLevel } = input
   if (currentLevel >= targetLevel) {
-    return { candy: 0, shards: 0 }
+    // Nothing to do; the remaining EXP is what is still needed at the current level.
+    const expToNext = currentLevel >= maxLevel ? 0 : expToNextLevel(currentLevel, expType) - expGot
+    return { candy: 0, shards: 0, expToNext }
   }
   let candy = 0
   let shards = 0
@@ -123,7 +127,8 @@ export function calcByTargetLevel(
     shards += shardsPerCandy[level + 1] * used * shardRate(boost)
     carry = perCandy * used - required
   }
-  return { candy, shards }
+  const expToNext = targetLevel >= maxLevel ? 0 : expBetween(targetLevel, targetLevel + 1, expType) - carry
+  return { candy, shards, expToNext }
 }
 
 export type CandyResult = {
