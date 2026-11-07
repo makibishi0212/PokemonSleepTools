@@ -60,7 +60,8 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
                 aria-label="現在のレベル"
                 value={plan.currentLevel}
                 aria-invalid={validation.currentLevel === null}
-                onCommit={(currentLevel) => update({ currentLevel })}
+                // A new level makes the mid-level EXP meaningless, so clear it.
+                onCommit={(currentLevel) => update({ currentLevel, expToNext: '' })}
               />
               <ExpDetailButton
                 value={plan.expToNext}
