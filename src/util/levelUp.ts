@@ -32,17 +32,24 @@ export function natureInfo(nature: Nature): NatureInfo {
   return natures.find((n) => n.value === nature) ?? natures[0]
 }
 
-const expTable = expJson as Record<string, number>
+/** Required EXP per level, keyed by EXP type then level ("2".."70"), from the wiki's per-type table. */
+const expTables = expJson as Record<string, Record<string, number>>
 const shardsTable = shardsJson as Record<string, number>
 
+const expTypes: readonly ExpType[] = [600, 900, 1080, 1320]
+
 /** Highest level in the EXP table. */
-export const maxLevel = Math.max(...Object.keys(expTable).map(Number))
+export const maxLevel = Math.max(...Object.keys(expTables['600']).map(Number))
 export const minLevel = 1
 
-/** totalExp[level] = EXP from Lv1 to `level` for the 600 type. */
-const totalExp: number[] = [0, 0]
-for (let level = 2; level <= maxLevel; level++) {
-  totalExp[level] = totalExp[level - 1] + expTable[String(level)]
+/** totalExp[type][level] = EXP from Lv1 to `level`. */
+const totalExp: Record<ExpType, number[]> = { 600: [], 900: [], 1080: [], 1320: [] }
+for (const type of expTypes) {
+  const total = [0, 0]
+  for (let level = 2; level <= maxLevel; level++) {
+    total[level] = total[level - 1] + expTables[String(type)][String(level)]
+  }
+  totalExp[type] = total
 }
 
 /** shardsPerCandy[level] = dream shards per candy while leveling up to `level`. */
@@ -51,12 +58,9 @@ for (let level = 2; level <= maxLevel; level++) {
   shardsPerCandy[level] = shardsTable[String(level)]
 }
 
-const expTypeRate: Record<ExpType, number> = { 600: 1, 900: 1.5, 1080: 1.8, 1320: 2.2 }
-
 /** EXP needed to go from `from` to `to` for the given EXP type. */
 export function expBetween(from: number, to: number, expType: ExpType): number {
-  const rate = expTypeRate[expType]
-  return Math.round(totalExp[to] * rate) - Math.round(totalExp[from] * rate)
+  return totalExp[expType][to] - totalExp[expType][from]
 }
 
 /** EXP gained from one candy at `level`. */
@@ -129,6 +133,8 @@ export type CandyResult = {
   candyUsed: number
   /** Dream shards required */
   shards: number
+  /** EXP still needed for the next level after using the candy (0 at max level) */
+  expToNext: number
 }
 
 /**
@@ -149,10 +155,12 @@ export function calcByCandy(input: PlanInput, candy: number, expGot: number = 0)
     shards += shardsPerCandy[level + 1] * used * shardRate(boost)
     candyLeft -= used
     if (used < needed) {
-      break // ran out of candy before the next level
+      carry += perCandy * used // ran out of candy before the next level
+      break
     }
     carry = perCandy * used - required
     level++
   }
-  return { level, candyUsed: Math.max(0, Math.floor(candy)) - candyLeft, shards }
+  const expToNext = level >= maxLevel ? 0 : expBetween(level, level + 1, expType) - carry
+  return { level, candyUsed: Math.max(0, Math.floor(candy)) - candyLeft, shards, expToNext }
 }
