@@ -175,7 +175,7 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete, onMoveUp, onMoveDow
           </div>
         )}
         <div className="plan-card-result">
-          <span className="plan-card-label">ゆめのかけら</span>
+          <span className="plan-card-label">かけら</span>
           <span className="plan-card-result-value is-shards">
             {result ? format(result.shards) : INVALID}
           </span>

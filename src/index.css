@@ -229,6 +229,16 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Narrow screens: smaller boost buttons so 通常 / ミニアメブースト / アメブースト fit beside 一覧モード. */
+@media screen and (max-width: 768px) {
+  .boost-buttons .button.is-small {
+    font-size: 0.6875rem;
+    height: 1.75rem;
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+  }
+}
+
 /* Plain bordered card instead of Bulma's shadowed box. */
 .plan-card {
   position: relative;
@@ -266,11 +276,14 @@ body {
 /*
  * Row-2 number input spans columns 2-3 and fills them, so its right edge lines up
  * with the right edge of the level input above it.
+ * width: 0 keeps the input's intrinsic width (~20 characters) out of the max-content
+ * track sizing, which would otherwise widen column 3 past the level field;
+ * min-width: 100% then stretches it over the sized columns.
  */
 .plan-card .plan-card-amount {
   grid-column: 2 / 4;
-  justify-self: stretch;
-  width: 100%;
+  width: 0;
+  min-width: 100%;
 }
 
 /* Level field: a button styled as an input, with Bulma's right icon slot. */

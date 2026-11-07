@@ -79,7 +79,7 @@ function LevelPage() {
       <div className="plan-toolbar mb-4">
         <div className="field mb-0">
           <label className="label is-small">ブースト</label>
-          <div className="buttons has-addons">
+          <div className="buttons has-addons boost-buttons">
             {boosts.map((b) => (
               <button
                 key={b.value}
@@ -110,7 +110,7 @@ function LevelPage() {
               <th>ポケモン</th>
               <th className="has-text-centered">性格</th>
               <th className="has-text-right">Lv</th>
-              <th className="has-text-right">次のレベルまで</th>
+              <th className="has-text-right">次LVまで</th>
               <th className="has-text-right">アメ</th>
               <th className="has-text-right">かけら</th>
             </tr>
