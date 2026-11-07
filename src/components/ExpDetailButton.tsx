@@ -39,8 +39,8 @@ function ExpDetailButton({ value, onChange, maxExp, isInvalid }: Props) {
   }, [isOpen])
 
   const buttonClass = [
-    'button is-small exp-detail-button',
-    isInvalid ? 'is-danger is-outlined' : isSet ? 'is-link is-outlined' : '',
+    'exp-detail-button',
+    isInvalid ? 'has-text-danger' : isSet ? 'has-text-link' : '',
   ].join(' ')
   const tooltip = isInvalid
     ? '次のレベルまでのEXPが範囲外です'
@@ -61,9 +61,7 @@ function ExpDetailButton({ value, onChange, maxExp, isInvalid }: Props) {
           disabled={disabled}
           onClick={() => setIsOpen((open) => !open)}
         >
-          <span className="icon is-small" aria-hidden="true">
-            ⚙
-          </span>
+          <span aria-hidden="true">⚙</span>
         </button>
       </div>
       <div className="dropdown-menu" role="dialog" aria-label="経験値の詳細設定">
