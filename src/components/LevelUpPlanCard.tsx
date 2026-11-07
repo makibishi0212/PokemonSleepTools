@@ -50,7 +50,7 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
           </div>
 
           <div className="plan-card-field">
-            <span className="plan-card-label">Lv</span>
+            <span className="plan-card-label">現在LV・EXP</span>
             {/* Level input with the EXP detail gear inside its right edge */}
             <div className="level-control">
               <DraftInput
