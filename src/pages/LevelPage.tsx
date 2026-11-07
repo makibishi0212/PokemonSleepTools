@@ -62,6 +62,16 @@ function LevelPage() {
   const updatePlan = (updated: Plan) =>
     setPlans((prev) => prev.map((p) => (p.id === updated.id ? updated : p)))
   const deletePlan = (id: number) => setPlans((prev) => prev.filter((p) => p.id !== id))
+  /** Swap the plan with its neighbour (`delta` = -1: up, +1: down). */
+  const movePlan = (id: number, delta: -1 | 1) =>
+    setPlans((prev) => {
+      const from = prev.findIndex((p) => p.id === id)
+      const to = from + delta
+      if (from < 0 || to < 0 || to >= prev.length) return prev
+      const next = [...prev]
+      ;[next[from], next[to]] = [next[to], next[from]]
+      return next
+    })
   const addPlan = () => setPlans((prev) => [...prev, newPlan()])
 
   return (
@@ -122,6 +132,8 @@ function LevelPage() {
                 result={results[i]}
                 onChange={updatePlan}
                 onDelete={() => deletePlan(plan.id)}
+                onMoveUp={i > 0 ? () => movePlan(plan.id, -1) : undefined}
+                onMoveDown={i < plans.length - 1 ? () => movePlan(plan.id, 1) : undefined}
               />
             ))}
           </div>

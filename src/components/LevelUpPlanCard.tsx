@@ -1,4 +1,4 @@
-import { faBarsProgress } from '@fortawesome/free-solid-svg-icons'
+import { faBarsProgress, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { findPokemon } from '../data/pokemons.ts'
@@ -14,6 +14,9 @@ type Props = {
   result: PlanResult | null
   onChange: (plan: Plan) => void
   onDelete: () => void
+  /** Swap with the card above / below; undefined when there is none */
+  onMoveUp?: () => void
+  onMoveDown?: () => void
 }
 
 const modes: readonly { value: PlanMode; label: string }[] = [
@@ -35,7 +38,7 @@ function format(n: number): string {
   return n.toLocaleString('ja-JP')
 }
 
-function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
+function LevelUpPlanCard({ plan, result, onChange, onDelete, onMoveUp, onMoveDown }: Props) {
   const update = (patch: Partial<Plan>) => onChange({ ...plan, ...patch })
   const expType = findPokemon(plan.pokemonName)?.exp ?? 600
   const validation = validatePlan(plan, expType)
@@ -179,12 +182,28 @@ function LevelUpPlanCard({ plan, result, onChange, onDelete }: Props) {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="delete plan-card-delete"
-        aria-label="この育成予定を削除"
-        onClick={onDelete}
-      />
+      {/* Top-right column: delete, then move up / down */}
+      <div className="plan-card-controls">
+        <button type="button" className="delete" aria-label="この育成予定を削除" onClick={onDelete} />
+        <button
+          type="button"
+          className="plan-card-move"
+          aria-label="上の育成予定と入れ替え"
+          disabled={!onMoveUp}
+          onClick={onMoveUp}
+        >
+          <FontAwesomeIcon icon={faChevronUp} aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          className="plan-card-move"
+          aria-label="下の育成予定と入れ替え"
+          disabled={!onMoveDown}
+          onClick={onMoveDown}
+        >
+          <FontAwesomeIcon icon={faChevronDown} aria-hidden="true" />
+        </button>
+      </div>
     </div>
   )
 }
