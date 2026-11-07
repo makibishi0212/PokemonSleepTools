@@ -180,7 +180,8 @@ body {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  /* Column 3 has a minimum width so the level input is comfortably wide. */
+  grid-template-columns: max-content max-content minmax(6.5em, max-content);
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -189,20 +190,25 @@ body {
   display: contents;
 }
 
-/* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
-.plan-card-amount {
+/*
+ * Row-2 number input spans columns 2-3 and fills them, so its right edge lines up
+ * with the right edge of the level input above it.
+ */
+.plan-card .plan-card-amount {
   grid-column: 2 / 4;
-  justify-self: start;
+  justify-self: stretch;
+  width: 100%;
 }
 
 /* Level input with the EXP detail gear docked inside its right edge. */
 .level-control {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 .level-control .level-input {
-  width: 5em;
+  width: 100%;
   padding-right: 1.6em;
 }
 
@@ -371,7 +377,8 @@ body {
   flex: 1 1 auto;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  /* Column 3 has a minimum width so the level input is comfortably wide. */
+  grid-template-columns: max-content max-content minmax(6.5em, max-content);
   gap: 0.25rem 0.5rem;
   align-items: end;
 }
@@ -380,20 +387,25 @@ body {
   display: contents;
 }
 
-/* Row-2 number input spans columns 2-3 so its width does not push Lv away from EXP. */
-.plan-card-amount {
+/*
+ * Row-2 number input spans columns 2-3 and fills them, so its right edge lines up
+ * with the right edge of the level input above it.
+ */
+.plan-card .plan-card-amount {
   grid-column: 2 / 4;
-  justify-self: start;
+  justify-self: stretch;
+  width: 100%;
 }
 
 /* Level input with the EXP detail gear docked inside its right edge. */
 .level-control {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 .level-control .level-input {
-  width: 5em;
+  width: 100%;
   padding-right: 1.6em;
 }
 
