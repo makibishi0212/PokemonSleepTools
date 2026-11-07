@@ -12,8 +12,8 @@ type Props = {
 }
 
 const modes: readonly { value: PlanMode; label: string }[] = [
-  { value: 'target', label: '目標レベル' },
   { value: 'candy', label: 'アメの個数' },
+  { value: 'target', label: '目標レベル' },
 ]
 
 /** Placeholder shown instead of a result while input is invalid. */

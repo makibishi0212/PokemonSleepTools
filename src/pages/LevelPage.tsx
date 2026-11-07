@@ -15,7 +15,7 @@ function newPlan(): Plan {
     pokemonName: pokemons[0].name,
     nature: 'neutral',
     currentLevel: '1',
-    mode: 'target',
+    mode: 'candy',
     candy: '0',
     targetLevel: '30',
   }
