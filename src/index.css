@@ -120,14 +120,8 @@ body {
 
 /* Tool page title: smaller than Bulma's default so it stays on one line on narrow screens. */
 .tool-page-title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin-bottom: 0.75rem;
-}
-
-@media screen and (max-width: 768px) {
-  .tool-page-title {
-    font-size: 1.25rem;
-  }
 }
 
 /* Sidebar links: plain text in the body color, no background (also for hover/active). */
@@ -263,14 +257,8 @@ body {
 
 /* Tool page title: smaller than Bulma's default so it stays on one line on narrow screens. */
 .tool-page-title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin-bottom: 0.75rem;
-}
-
-@media screen and (max-width: 768px) {
-  .tool-page-title {
-    font-size: 1.25rem;
-  }
 }
 
 /* Sidebar links: plain text in the body color, no background (also for hover/active). */
