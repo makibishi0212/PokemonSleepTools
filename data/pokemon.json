@@ -1,0 +1,1520 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 2,
+    "name": "Ivysaur",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 3,
+    "name": "Venusaur",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 4,
+    "name": "Charmander",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 5,
+    "name": "Charmeleon",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 6,
+    "name": "Charizard",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 8,
+    "name": "Wartortle",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 9,
+    "name": "Blastoise",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 10,
+    "name": "Caterpie",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 11,
+    "name": "Metapod",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 12,
+    "name": "Butterfree",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 19,
+    "name": "Rattata",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 20,
+    "name": "Raticate",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 23,
+    "name": "Ekans",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 24,
+    "name": "Arbok",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu (Holiday)",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu (Halloween)",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu (Halloween2)",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu (Captain)",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 26,
+    "name": "Raichu",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 27,
+    "name": "Sandshrew",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 28,
+    "name": "Sandslash",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 35,
+    "name": "Clefairy",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 36,
+    "name": "Clefable",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 37,
+    "name": "Vulpix",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 37,
+    "name": "Vulpix (Alola)",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 38,
+    "name": "Ninetales",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 38,
+    "name": "Ninetales (Alola)",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 39,
+    "name": "Jigglypuff",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 40,
+    "name": "Wigglytuff",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 50,
+    "name": "Diglett",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 51,
+    "name": "Dugtrio",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 52,
+    "name": "Meowth",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 53,
+    "name": "Persian",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 54,
+    "name": "Psyduck",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 55,
+    "name": "Golduck",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 56,
+    "name": "Mankey",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 57,
+    "name": "Primeape",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 58,
+    "name": "Growlithe",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 59,
+    "name": "Arcanine",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 69,
+    "name": "Bellsprout",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 70,
+    "name": "Weepinbell",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 71,
+    "name": "Victreebel",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 74,
+    "name": "Geodude",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 75,
+    "name": "Graveler",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 76,
+    "name": "Golem",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 79,
+    "name": "Slowpoke",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 80,
+    "name": "Slowbro",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 81,
+    "name": "Magnemite",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 82,
+    "name": "Magneton",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 83,
+    "name": "Farfetch'd",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 84,
+    "name": "Doduo",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 85,
+    "name": "Dodrio",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 92,
+    "name": "Gastly",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 93,
+    "name": "Haunter",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 94,
+    "name": "Gengar",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 95,
+    "name": "Onix",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 104,
+    "name": "Cubone",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 105,
+    "name": "Marowak",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 113,
+    "name": "Chansey",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 115,
+    "name": "Kangaskhan",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 122,
+    "name": "Mr. Mime",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 127,
+    "name": "Pinsir",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 132,
+    "name": "Ditto",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 133,
+    "name": "Eevee",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 133,
+    "name": "Eevee (Halloween)",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 133,
+    "name": "Eevee (Halloween2)",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 133,
+    "name": "Eevee (Holiday)",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 134,
+    "name": "Vaporeon",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 135,
+    "name": "Jolteon",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 136,
+    "name": "Flareon",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 147,
+    "name": "Dratini",
+    "exp": 900,
+    "type": "dragon"
+  },
+  {
+    "id": 148,
+    "name": "Dragonair",
+    "exp": 900,
+    "type": "dragon"
+  },
+  {
+    "id": 149,
+    "name": "Dragonite",
+    "exp": 900,
+    "type": "dragon"
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "exp": 1080,
+    "type": "psychic"
+  },
+  {
+    "id": 151,
+    "name": "Mew",
+    "exp": 1320,
+    "type": "psychic"
+  },
+  {
+    "id": 152,
+    "name": "Chikorita",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 153,
+    "name": "Bayleef",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 154,
+    "name": "Meganium",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 155,
+    "name": "Cyndaquil",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 156,
+    "name": "Quilava",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 157,
+    "name": "Typhlosion",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 158,
+    "name": "Totodile",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 159,
+    "name": "Croconaw",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 160,
+    "name": "Feraligatr",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 172,
+    "name": "Pichu",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 173,
+    "name": "Cleffa",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 174,
+    "name": "Igglybuff",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 175,
+    "name": "Togepi",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 176,
+    "name": "Togetic",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 177,
+    "name": "Natu",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 178,
+    "name": "Xatu",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 179,
+    "name": "Mareep",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 180,
+    "name": "Flaaffy",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 181,
+    "name": "Ampharos",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 185,
+    "name": "Sudowoodo",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 194,
+    "name": "Wooper",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 194,
+    "name": "Wooper (Paldea)",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 195,
+    "name": "Quagsire",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 196,
+    "name": "Espeon",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 197,
+    "name": "Umbreon",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 198,
+    "name": "Murkrow",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 199,
+    "name": "Slowking",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 200,
+    "name": "Misdreavus",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 202,
+    "name": "Wobbuffet",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 208,
+    "name": "Steelix",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 213,
+    "name": "Shuckle",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 214,
+    "name": "Heracross",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 215,
+    "name": "Sneasel",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 225,
+    "name": "Delibird",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 228,
+    "name": "Houndour",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 229,
+    "name": "Houndoom",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 242,
+    "name": "Blissey",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 243,
+    "name": "Raikou",
+    "exp": 1080,
+    "type": "electric"
+  },
+  {
+    "id": 244,
+    "name": "Entei",
+    "exp": 1080,
+    "type": "fire"
+  },
+  {
+    "id": 245,
+    "name": "Suicune",
+    "exp": 1080,
+    "type": "water"
+  },
+  {
+    "id": 246,
+    "name": "Larvitar",
+    "exp": 900,
+    "type": "rock"
+  },
+  {
+    "id": 247,
+    "name": "Pupitar",
+    "exp": 900,
+    "type": "rock"
+  },
+  {
+    "id": 248,
+    "name": "Tyranitar",
+    "exp": 900,
+    "type": "dark"
+  },
+  {
+    "id": 252,
+    "name": "Treecko",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 253,
+    "name": "Grovyle",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 254,
+    "name": "Sceptile",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 255,
+    "name": "Torchic",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 256,
+    "name": "Combusken",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 257,
+    "name": "Blaziken",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 258,
+    "name": "Mudkip",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 259,
+    "name": "Marshtomp",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 260,
+    "name": "Swampert",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 280,
+    "name": "Ralts",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 281,
+    "name": "Kirlia",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 282,
+    "name": "Gardevoir",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 287,
+    "name": "Slakoth",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 288,
+    "name": "Vigoroth",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 289,
+    "name": "Slaking",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 302,
+    "name": "Sableye",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 303,
+    "name": "Mawile",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 304,
+    "name": "Aron",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 305,
+    "name": "Lairon",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 306,
+    "name": "Aggron",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 311,
+    "name": "Plusle",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 312,
+    "name": "Minun",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 316,
+    "name": "Gulpin",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 317,
+    "name": "Swalot",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 328,
+    "name": "Trapinch",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 329,
+    "name": "Vibrava",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 330,
+    "name": "Flygon",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 333,
+    "name": "Swablu",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 334,
+    "name": "Altaria",
+    "exp": 600,
+    "type": "dragon"
+  },
+  {
+    "id": 353,
+    "name": "Shuppet",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 354,
+    "name": "Banette",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 359,
+    "name": "Absol",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 360,
+    "name": "Wynaut",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 363,
+    "name": "Spheal",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 363,
+    "name": "Spheal (Holiday)",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 364,
+    "name": "Sealeo",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 365,
+    "name": "Walrein",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 371,
+    "name": "Bagon",
+    "exp": 900,
+    "type": "dragon"
+  },
+  {
+    "id": 372,
+    "name": "Shelgon",
+    "exp": 900,
+    "type": "dragon"
+  },
+  {
+    "id": 373,
+    "name": "Salamence",
+    "exp": 900,
+    "type": "dragon"
+  },
+  {
+    "id": 380,
+    "name": "Latias",
+    "exp": 1080,
+    "type": "dragon"
+  },
+  {
+    "id": 381,
+    "name": "Latios",
+    "exp": 1080,
+    "type": "dragon"
+  },
+  {
+    "id": 387,
+    "name": "Turtwig",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 388,
+    "name": "Grotle",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 389,
+    "name": "Torterra",
+    "exp": 600,
+    "type": "ground"
+  },
+  {
+    "id": 390,
+    "name": "Chimchar",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 391,
+    "name": "Monferno",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 392,
+    "name": "Infernape",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 393,
+    "name": "Piplup",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 394,
+    "name": "Prinplup",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 395,
+    "name": "Empoleon",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 403,
+    "name": "Shinx",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 404,
+    "name": "Luxio",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 405,
+    "name": "Luxray",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 425,
+    "name": "Drifloon",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 426,
+    "name": "Drifblim",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 429,
+    "name": "Mismagius",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 430,
+    "name": "Honchkrow",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 438,
+    "name": "Bonsly",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 439,
+    "name": "Mime Jr.",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 440,
+    "name": "Happiny",
+    "exp": 600,
+    "type": "normal"
+  },
+  {
+    "id": 442,
+    "name": "Spiritomb",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 447,
+    "name": "Riolu",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 448,
+    "name": "Lucario",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 453,
+    "name": "Croagunk",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 454,
+    "name": "Toxicroak",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 459,
+    "name": "Snover",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 460,
+    "name": "Abomasnow",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 461,
+    "name": "Weavile",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 462,
+    "name": "Magnezone",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 468,
+    "name": "Togekiss",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 470,
+    "name": "Leafeon",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 471,
+    "name": "Glaceon",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 475,
+    "name": "Gallade",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 488,
+    "name": "Cresselia",
+    "exp": 1080,
+    "type": "psychic"
+  },
+  {
+    "id": 491,
+    "name": "Darkrai",
+    "exp": 1320,
+    "type": "dark"
+  },
+  {
+    "id": 517,
+    "name": "Munna",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 518,
+    "name": "Musharna",
+    "exp": 600,
+    "type": "psychic"
+  },
+  {
+    "id": 557,
+    "name": "Dwebble",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 558,
+    "name": "Crustle",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 590,
+    "name": "Foongus",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 591,
+    "name": "Amoonguss",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 627,
+    "name": "Rufflet",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 628,
+    "name": "Braviary",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 696,
+    "name": "Tyrunt",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 697,
+    "name": "Tyrantrum",
+    "exp": 600,
+    "type": "rock"
+  },
+  {
+    "id": 700,
+    "name": "Sylveon",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 701,
+    "name": "Hawlucha",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 702,
+    "name": "Dedenne",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 710,
+    "name": "Pumpkaboo (Small)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 710,
+    "name": "Pumpkaboo (Medium)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 710,
+    "name": "Pumpkaboo (Large)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 710,
+    "name": "Pumpkaboo (Jumbo)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 711,
+    "name": "Gourgeist (Small)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 711,
+    "name": "Gourgeist (Medium)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 711,
+    "name": "Gourgeist (Large)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 711,
+    "name": "Gourgeist (Jumbo)",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 714,
+    "name": "Noibat",
+    "exp": 600,
+    "type": "dragon"
+  },
+  {
+    "id": 715,
+    "name": "Noivern",
+    "exp": 600,
+    "type": "dragon"
+  },
+  {
+    "id": 736,
+    "name": "Grubbin",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 737,
+    "name": "Charjabug",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 738,
+    "name": "Vikavolt",
+    "exp": 600,
+    "type": "bug"
+  },
+  {
+    "id": 742,
+    "name": "Cutiefly",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 743,
+    "name": "Ribombee",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 759,
+    "name": "Stufful",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 760,
+    "name": "Bewear",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 764,
+    "name": "Comfey",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 777,
+    "name": "Togedemaru",
+    "exp": 600,
+    "type": "steel"
+  },
+  {
+    "id": 778,
+    "name": "Mimikyu",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 780,
+    "name": "Drampa",
+    "exp": 600,
+    "type": "dragon"
+  },
+  {
+    "id": 845,
+    "name": "Cramorant",
+    "exp": 600,
+    "type": "flying"
+  },
+  {
+    "id": 848,
+    "name": "Toxel",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 849,
+    "name": "Toxtricity (Amped)",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 849,
+    "name": "Toxtricity (Low Key)",
+    "exp": 600,
+    "type": "poison"
+  },
+  {
+    "id": 906,
+    "name": "Sprigatito",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 907,
+    "name": "Floragato",
+    "exp": 600,
+    "type": "grass"
+  },
+  {
+    "id": 908,
+    "name": "Meowscarada",
+    "exp": 600,
+    "type": "dark"
+  },
+  {
+    "id": 909,
+    "name": "Fuecoco",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 910,
+    "name": "Crocalor",
+    "exp": 600,
+    "type": "fire"
+  },
+  {
+    "id": 911,
+    "name": "Skeledirge",
+    "exp": 600,
+    "type": "ghost"
+  },
+  {
+    "id": 912,
+    "name": "Quaxly",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 913,
+    "name": "Quaxwell",
+    "exp": 600,
+    "type": "water"
+  },
+  {
+    "id": 914,
+    "name": "Quaquaval",
+    "exp": 600,
+    "type": "fighting"
+  },
+  {
+    "id": 921,
+    "name": "Pawmi",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 922,
+    "name": "Pawmo",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 923,
+    "name": "Pawmot",
+    "exp": 600,
+    "type": "electric"
+  },
+  {
+    "id": 957,
+    "name": "Tinkatink",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 958,
+    "name": "Tinkatuff",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 959,
+    "name": "Tinkaton",
+    "exp": 600,
+    "type": "fairy"
+  },
+  {
+    "id": 974,
+    "name": "Cetoddle",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 975,
+    "name": "Cetitan",
+    "exp": 600,
+    "type": "ice"
+  },
+  {
+    "id": 980,
+    "name": "Clodsire",
+    "exp": 600,
+    "type": "poison"
+  }
+]
