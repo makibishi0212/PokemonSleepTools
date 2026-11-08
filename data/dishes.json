@@ -1,0 +1,617 @@
+[
+  {
+    "name": "Fancy Apple Curry",
+    "ingredients": {
+      "Fancy Apple": 7
+    }
+  },
+  {
+    "name": "Grilled Tail Curry",
+    "ingredients": {
+      "Slowpoke Tail": 8,
+      "Fiery Herb": 25
+    }
+  },
+  {
+    "name": "Solar Power Tomato Curry",
+    "ingredients": {
+      "Snoozy Tomato": 10,
+      "Fiery Herb": 5
+    }
+  },
+  {
+    "name": "Dream Eater Butter Curry",
+    "ingredients": {
+      "Soft Potato": 18,
+      "Snoozy Tomato": 15,
+      "Soothing Cacao": 12,
+      "Moomoo Milk": 10
+    }
+  },
+  {
+    "name": "Spicy Leek Curry",
+    "ingredients": {
+      "Large Leek": 14,
+      "Warming Ginger": 10,
+      "Fiery Herb": 8
+    }
+  },
+  {
+    "name": "Spore Mushroom Curry",
+    "ingredients": {
+      "Tasty Mushroom": 14,
+      "Soft Potato": 9
+    }
+  },
+  {
+    "name": "Egg Bomb Curry",
+    "ingredients": {
+      "Honey": 12,
+      "Fancy Apple": 11,
+      "Fancy Egg": 8,
+      "Soft Potato": 4
+    }
+  },
+  {
+    "name": "Hearty Cheeseburger Curry",
+    "ingredients": {
+      "Moomoo Milk": 8,
+      "Bean Sausage": 8
+    }
+  },
+  {
+    "name": "Soft Potato Chowder",
+    "ingredients": {
+      "Moomoo Milk": 10,
+      "Soft Potato": 8,
+      "Tasty Mushroom": 4
+    }
+  },
+  {
+    "name": "Simple Chowder",
+    "ingredients": {
+      "Moomoo Milk": 7
+    }
+  },
+  {
+    "name": "Beanburger Curry",
+    "ingredients": {
+      "Bean Sausage": 7
+    }
+  },
+  {
+    "name": "Mild Honey Curry",
+    "ingredients": {
+      "Honey": 7
+    }
+  },
+  {
+    "name": "Ninja Curry",
+    "ingredients": {
+      "Greengrass Soybeans": 24,
+      "Bean Sausage": 9,
+      "Large Leek": 12,
+      "Tasty Mushroom": 5
+    }
+  },
+  {
+    "name": "Drought Katsu Curry",
+    "ingredients": {
+      "Bean Sausage": 10,
+      "Pure Oil": 5
+    }
+  },
+  {
+    "name": "Melty Omelette Curry",
+    "ingredients": {
+      "Fancy Egg": 10,
+      "Snoozy Tomato": 6
+    }
+  },
+  {
+    "name": "Bulk Up Bean Curry",
+    "ingredients": {
+      "Greengrass Soybeans": 12,
+      "Bean Sausage": 6,
+      "Fiery Herb": 4,
+      "Fancy Egg": 4
+    }
+  },
+  {
+    "name": "Limber Corn Stew",
+    "ingredients": {
+      "Greengrass Corn": 14,
+      "Moomoo Milk": 8,
+      "Soft Potato": 8
+    }
+  },
+  {
+    "name": "Inferno Corn Keema Curry",
+    "ingredients": {
+      "Fiery Herb": 27,
+      "Bean Sausage": 24,
+      "Greengrass Corn": 14,
+      "Warming Ginger": 12
+    }
+  },
+  {
+    "name": "Dizzy Punch Spicy Curry",
+    "ingredients": {
+      "Rousing Coffee": 11,
+      "Fiery Herb": 11,
+      "Honey": 11
+    }
+  },
+  {
+    "name": "Hidden Power Perk-Up Stew",
+    "ingredients": {
+      "Greengrass Soybeans": 28,
+      "Snoozy Tomato": 25,
+      "Tasty Mushroom": 23,
+      "Rousing Coffee": 16
+    }
+  },
+  {
+    "name": "Cut Sukiyaki Curry",
+    "ingredients": {
+      "Large Leek": 27,
+      "Bean Sausage": 26,
+      "Honey": 26,
+      "Fancy Egg": 22
+    }
+  },
+  {
+    "name": "Role Play Pumpkaboo Stew",
+    "ingredients": {
+      "Plump Pumpkin": 10,
+      "Bean Sausage": 16,
+      "Soft Potato": 18,
+      "Tasty Mushroom": 25
+    }
+  },
+  {
+    "name": "Overgrow Avocado Gratin",
+    "ingredients": {
+      "Glossy Avocado": 22,
+      "Soft Potato": 20,
+      "Moomoo Milk": 41,
+      "Pure Oil": 32
+    }
+  },
+  {
+    "name": "Greengrass Curry Bun",
+    "ingredients": {
+      "Warming Ginger": 20,
+      "Fiery Herb": 20,
+      "Greengrass Soybeans": 8,
+      "Pure Oil": 15
+    }
+  },
+  {
+    "name": "Bounce Curry Udon",
+    "ingredients": {
+      "Warming Ginger": 39,
+      "Tasty Mushroom": 31,
+      "Fiery Herb": 22,
+      "Bean Sausage": 20
+    }
+  },
+  {
+    "name": "Slowpoke Tail Pepper Salad",
+    "ingredients": {
+      "Slowpoke Tail": 10,
+      "Fiery Herb": 10,
+      "Pure Oil": 15
+    }
+  },
+  {
+    "name": "Spore Mushroom Salad",
+    "ingredients": {
+      "Tasty Mushroom": 17,
+      "Snoozy Tomato": 8,
+      "Pure Oil": 8
+    }
+  },
+  {
+    "name": "Snow Cloak Caesar Salad",
+    "ingredients": {
+      "Moomoo Milk": 10,
+      "Bean Sausage": 6
+    }
+  },
+  {
+    "name": "Gluttony Potato Salad",
+    "ingredients": {
+      "Soft Potato": 14,
+      "Fancy Egg": 9,
+      "Bean Sausage": 7,
+      "Fancy Apple": 6
+    }
+  },
+  {
+    "name": "Water Veil Tofu Salad",
+    "ingredients": {
+      "Greengrass Soybeans": 15,
+      "Snoozy Tomato": 9
+    }
+  },
+  {
+    "name": "Superpower Extreme Salad",
+    "ingredients": {
+      "Bean Sausage": 9,
+      "Warming Ginger": 6,
+      "Fancy Egg": 5,
+      "Soft Potato": 3
+    }
+  },
+  {
+    "name": "Bean Ham Salad",
+    "ingredients": {
+      "Bean Sausage": 8
+    }
+  },
+  {
+    "name": "Snoozy Tomato Salad",
+    "ingredients": {
+      "Snoozy Tomato": 8
+    }
+  },
+  {
+    "name": "Moomoo Caprese Salad",
+    "ingredients": {
+      "Moomoo Milk": 12,
+      "Snoozy Tomato": 6,
+      "Pure Oil": 5
+    }
+  },
+  {
+    "name": "Contrary Chocolate Meat Salad",
+    "ingredients": {
+      "Soothing Cacao": 14,
+      "Bean Sausage": 9
+    }
+  },
+  {
+    "name": "Overheat Ginger Salad",
+    "ingredients": {
+      "Fiery Herb": 17,
+      "Warming Ginger": 10,
+      "Snoozy Tomato": 8
+    }
+  },
+  {
+    "name": "Fancy Apple Salad",
+    "ingredients": {
+      "Fancy Apple": 8
+    }
+  },
+  {
+    "name": "Immunity Leek Salad",
+    "ingredients": {
+      "Large Leek": 10,
+      "Warming Ginger": 5
+    }
+  },
+  {
+    "name": "Dazzling Apple Cheese Salad",
+    "ingredients": {
+      "Fancy Apple": 15,
+      "Moomoo Milk": 5,
+      "Pure Oil": 3
+    }
+  },
+  {
+    "name": "Ninja Salad",
+    "ingredients": {
+      "Large Leek": 15,
+      "Greengrass Soybeans": 19,
+      "Tasty Mushroom": 12,
+      "Warming Ginger": 11
+    }
+  },
+  {
+    "name": "Heat Wave Tofu Salad",
+    "ingredients": {
+      "Greengrass Soybeans": 10,
+      "Fiery Herb": 6
+    }
+  },
+  {
+    "name": "Greengrass Salad",
+    "ingredients": {
+      "Pure Oil": 22,
+      "Greengrass Corn": 17,
+      "Snoozy Tomato": 14,
+      "Soft Potato": 9
+    }
+  },
+  {
+    "name": "Calm Mind Fruit Salad",
+    "ingredients": {
+      "Fancy Apple": 21,
+      "Honey": 16,
+      "Greengrass Corn": 12
+    }
+  },
+  {
+    "name": "Fury Attack Corn Salad",
+    "ingredients": {
+      "Greengrass Corn": 9,
+      "Pure Oil": 8
+    }
+  },
+  {
+    "name": "Cross Chop Salad",
+    "ingredients": {
+      "Fancy Egg": 20,
+      "Bean Sausage": 15,
+      "Greengrass Corn": 11,
+      "Snoozy Tomato": 10
+    }
+  },
+  {
+    "name": "Defiant Coffee-Dressed Salad",
+    "ingredients": {
+      "Rousing Coffee": 28,
+      "Bean Sausage": 28,
+      "Pure Oil": 22,
+      "Soft Potato": 22
+    }
+  },
+  {
+    "name": "Petal Blizzard Layered Salad",
+    "ingredients": {
+      "Fancy Egg": 25,
+      "Pure Oil": 17,
+      "Soft Potato": 15,
+      "Bean Sausage": 12
+    }
+  },
+  {
+    "name": "Apple Acid Yogurt-Dressed Salad",
+    "ingredients": {
+      "Fancy Egg": 35,
+      "Fancy Apple": 28,
+      "Snoozy Tomato": 23,
+      "Moomoo Milk": 18
+    }
+  },
+  {
+    "name": "Luscious Avocado Salad",
+    "ingredients": {
+      "Glossy Avocado": 14,
+      "Greengrass Soybeans": 18,
+      "Pure Oil": 10
+    }
+  },
+  {
+    "name": "Bulldoze Guacamole and Chips",
+    "ingredients": {
+      "Glossy Avocado": 28,
+      "Greengrass Corn": 25,
+      "Fiery Herb": 30,
+      "Greengrass Soybeans": 22
+    }
+  },
+  {
+    "name": "Scald Chunky Salad",
+    "ingredients": {
+      "Plump Pumpkin": 20,
+      "Soft Potato": 30,
+      "Greengrass Corn": 18,
+      "Tasty Mushroom": 27
+    }
+  },
+  {
+    "name": "Fluffy Sweet Potatoes",
+    "ingredients": {
+      "Soft Potato": 9,
+      "Moomoo Milk": 5
+    }
+  },
+  {
+    "name": "Steadfast Ginger Cookies",
+    "ingredients": {
+      "Honey": 14,
+      "Warming Ginger": 12,
+      "Soothing Cacao": 5,
+      "Fancy Egg": 4
+    }
+  },
+  {
+    "name": "Fancy Apple Juice",
+    "ingredients": {
+      "Fancy Apple": 8
+    }
+  },
+  {
+    "name": "Craft Soda Pop",
+    "ingredients": {
+      "Honey": 9
+    }
+  },
+  {
+    "name": "Ember Ginger Tea",
+    "ingredients": {
+      "Warming Ginger": 9,
+      "Fancy Apple": 7
+    }
+  },
+  {
+    "name": "Jigglypuff's Fruity Flan",
+    "ingredients": {
+      "Honey": 20,
+      "Fancy Egg": 15,
+      "Moomoo Milk": 10,
+      "Fancy Apple": 10
+    }
+  },
+  {
+    "name": "Lovely Kiss Smoothie",
+    "ingredients": {
+      "Fancy Apple": 11,
+      "Moomoo Milk": 9,
+      "Honey": 7,
+      "Soothing Cacao": 8
+    }
+  },
+  {
+    "name": "Lucky Chant Apple Pie",
+    "ingredients": {
+      "Fancy Apple": 12,
+      "Moomoo Milk": 4
+    }
+  },
+  {
+    "name": "Neroli's Restorative Tea",
+    "ingredients": {
+      "Warming Ginger": 11,
+      "Fancy Apple": 15,
+      "Tasty Mushroom": 9
+    }
+  },
+  {
+    "name": "Sweet Scent Chocolate Cake",
+    "ingredients": {
+      "Honey": 9,
+      "Soothing Cacao": 8,
+      "Moomoo Milk": 7
+    }
+  },
+  {
+    "name": "Warm Moomoo Milk",
+    "ingredients": {
+      "Moomoo Milk": 7
+    }
+  },
+  {
+    "name": "Cloud Nine Soy Cake",
+    "ingredients": {
+      "Fancy Egg": 8,
+      "Greengrass Soybeans": 7
+    }
+  },
+  {
+    "name": "Hustle Protein Smoothie",
+    "ingredients": {
+      "Greengrass Soybeans": 15,
+      "Soothing Cacao": 8
+    }
+  },
+  {
+    "name": "Stalwart Vegetable Juice",
+    "ingredients": {
+      "Snoozy Tomato": 9,
+      "Fancy Apple": 7
+    }
+  },
+  {
+    "name": "Big Malasada",
+    "ingredients": {
+      "Pure Oil": 10,
+      "Moomoo Milk": 7,
+      "Honey": 6
+    }
+  },
+  {
+    "name": "Huge Power Soy Donuts",
+    "ingredients": {
+      "Pure Oil": 12,
+      "Greengrass Soybeans": 16,
+      "Soothing Cacao": 7
+    }
+  },
+  {
+    "name": "Explosion Popcorn",
+    "ingredients": {
+      "Greengrass Corn": 15,
+      "Pure Oil": 14,
+      "Moomoo Milk": 7
+    }
+  },
+  {
+    "name": "Teatime Corn Scones",
+    "ingredients": {
+      "Fancy Apple": 20,
+      "Warming Ginger": 20,
+      "Greengrass Corn": 18,
+      "Moomoo Milk": 9
+    }
+  },
+  {
+    "name": "Petal Dance Chocolate Tart",
+    "ingredients": {
+      "Fancy Apple": 11,
+      "Soothing Cacao": 11
+    }
+  },
+  {
+    "name": "Flower Gift Macarons",
+    "ingredients": {
+      "Soothing Cacao": 25,
+      "Fancy Egg": 25,
+      "Honey": 17,
+      "Moomoo Milk": 10
+    }
+  },
+  {
+    "name": "Early Bird Coffee Jelly",
+    "ingredients": {
+      "Rousing Coffee": 16,
+      "Moomoo Milk": 14,
+      "Honey": 12
+    }
+  },
+  {
+    "name": "Zing Zap Spiced Cola",
+    "ingredients": {
+      "Fancy Apple": 35,
+      "Warming Ginger": 20,
+      "Large Leek": 20,
+      "Rousing Coffee": 12
+    }
+  },
+  {
+    "name": "Mold Breaker Corn Tiramisu",
+    "ingredients": {
+      "Rousing Coffee": 14,
+      "Greengrass Corn": 14,
+      "Moomoo Milk": 12
+    }
+  },
+  {
+    "name": "Clodsire Eclair",
+    "ingredients": {
+      "Soothing Cacao": 30,
+      "Moomoo Milk": 26,
+      "Rousing Coffee": 24,
+      "Honey": 22
+    }
+  },
+  {
+    "name": "Scary Face Pancakes",
+    "ingredients": {
+      "Plump Pumpkin": 18,
+      "Fancy Egg": 24,
+      "Honey": 32,
+      "Snoozy Tomato": 29
+    }
+  },
+  {
+    "name": "Leaf Tornado Smoothie",
+    "ingredients": {
+      "Glossy Avocado": 18,
+      "Snoozy Tomato": 16,
+      "Moomoo Milk": 14
+    }
+  },
+  {
+    "name": "Honey Gather Chocolate Waffles",
+    "ingredients": {
+      "Honey": 38,
+      "Greengrass Corn": 28,
+      "Pure Oil": 28,
+      "Soothing Cacao": 21
+    }
+  }
+]

@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router'
+import { SHOW_HEADER } from './config.ts'
 import { routes, toolList } from './routes.ts'
 
 /**
  * Tool page layout: a top bar with a menu button, plus a drawer sidebar.
  * Desktop: the drawer slides in over a dimmed content area.
  * Mobile: the drawer covers the whole screen.
- * With a single tool there is nothing to switch between, so the bar and drawer are omitted.
+ * The bar and drawer are omitted when SHOW_HEADER is off, or with a single tool
+ * (nothing to switch between).
  */
 function Layout() {
   const [isOpen, setIsOpen] = useState(false)
   const close = () => setIsOpen(false)
-  const hasMenu = toolList.length > 1
+  const hasMenu = SHOW_HEADER && toolList.length > 1
 
   // Close the drawer with the Escape key.
   useEffect(() => {

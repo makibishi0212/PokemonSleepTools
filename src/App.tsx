@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router'
 import Layout from './Layout.tsx'
+import DishPage from './pages/DishPage.tsx'
 import HomePage from './pages/HomePage.tsx'
 import LevelPage from './pages/LevelPage.tsx'
 import { tools } from './routes.ts'
@@ -12,6 +13,7 @@ function App() {
       {/* Tool pages share the sidebar layout. */}
       <Route element={<Layout />}>
         <Route path={tools.levelUpShards.path} element={<LevelPage />} />
+        <Route path={tools.dishIngredients.path} element={<DishPage />} />
       </Route>
     </Routes>
   )

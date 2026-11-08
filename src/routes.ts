@@ -14,6 +14,7 @@ export const routes = {
  */
 export const tools = {
   levelUpShards: { path: '/level-up-shards', name: 'レベル上げゆめのかけら計算' },
+  dishIngredients: { path: '/dish-ingredients', name: '料理食材数計算' },
 } as const satisfies Record<string, Tool>
 
 /** Tools in display order. */
